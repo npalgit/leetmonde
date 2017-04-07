@@ -40,6 +40,7 @@ class Solution(object):
         tails = []
         for i, env in enumerate(nums):
             idx = lmip(nums, tails, env)
+            print tails, env
             if idx >= len(tails):
                 tails.append(i)
             else:
@@ -50,12 +51,14 @@ class Solution(object):
 
 
 s = Solution()
+
+print s.maxEnvelopes(
+    [[5, 4], [6, 7], [6, 4], [6, 6], [5, 5], [4, 4], [3, 3], [2, 3], [2, 2], [1, 1], [1, 0], [0, 1]])  # 6
+exit()
 print s.maxEnvelopes([])  # 0
 print s.maxEnvelopes([[2, 3]])  # 1
 print s.maxEnvelopes([[5, 4], [6, 7], [6, 4], [2, 3]])  # 3
 print s.maxEnvelopes([[1, 1000], [0, 0], [1, 1], [2, 3]])  # 3
-print s.maxEnvelopes(
-    [[5, 4], [6, 7], [6, 4], [6, 6], [5, 5], [4, 4], [3, 3], [2, 3], [2, 2], [1, 1], [1, 0], [0, 1]])  # 6
 
 print s.maxEnvelopes([[5, 4], [6, 7], [6, 4], [2, 3]])  # 3
 
