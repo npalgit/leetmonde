@@ -102,7 +102,6 @@ class Solution(object):
                     result += mapping[next]['val']
                     print next, mapping[next], item
             mapping[item]['val'] += 1
-        print mapping, head
         return result
 
 
