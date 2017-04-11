@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            min-width: 365px;
+            min-height: 200px;
+        }
+        ul {
+            list-style: none;
+        }
+        #bg, #content {
+            z-index: 100;
+            width: 960px;
+            height: 560px;
+            margin: 10px auto;
+            padding: 20px 0;
+        }
+        #bg {
+            height: 540px;
+            margin: 0;
+            position: fixed;
+            z-index: -1;
+            opacity: 0.6;
+            background: url("bg.jpg") no-repeat fixed top;
+        }
+        #func {
+            padding: 20px 40px;
+            font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+        }
+        #func li {
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="bg">
+
+        </div>
+        <div id="func">
+            <h2>功能记录</h2>
+            <ul>
+                <li>1. leetcode 标题增加难度标记</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
