@@ -4,9 +4,8 @@
 # 77. Combinations (M)
 # Created by yangchao 11/04/2017
 
-
 class Solution(object):
-    def combine(self, n, k):
+    def combine1(self, n, k):
         """
         :type n: int
         :type k: int
@@ -26,6 +25,16 @@ class Solution(object):
                 _arr.append(i)
                 _com(_arr, i+1)
         _com([], 1)
+        return ret
+
+    def combine(self, n, k):
+        import itertools
+        if n == 0 or k > n:
+            return []
+        ret = []
+        for x in itertools.combinations(range(1, n+1), k):
+            ret.append(list(x))
+
         return ret
 
 
