@@ -20,11 +20,11 @@ class Solution(object):
         """
         ret = []
 
-        def _inorder(root):
-            if root is None:
+        def _inorder(_root):
+            if _root is None:
                 return
-            _inorder(root.left)
-            ret.append(root.val)
-            _inorder(root.right)
+            _inorder(_root.left)
+            ret.append(_root.val)
+            _inorder(_root.right)
         _inorder(root)
         return ret
