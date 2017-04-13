@@ -16,13 +16,33 @@ class Solution(object):
         l = len(intervals)
         if l < 1:
             return [newInterval]
+        intervals.append(newInterval)
 
-        ruler = {}
-        for interval in intervals:
-            s = interval.start
-            e = interval.end
+        def cmp(a, b):
+            if a.start > b.start:
+                return 1
+            if a.start < b.start:
+                return -1
+            if a.start == b.start:
+                if a.end > b.start:
+                    return -1
+                if a.end < b.end:
+                    return 1
+            return 0
+        intervals.sort(cmp)
+        _from = intervals[0].start
+        _reach = intervals[0].end
+        ret = []
+        for item in intervals:
+            if item.start > _reach:
+                ret.append(Interval(_from, _reach))
+                _from = item.start
+                _reach = item.end
+            elif item.end > _reach:
+                _reach = item.end
+        ret.append(Interval(_from, _reach))
 
-
+        return ret
 
 
 
