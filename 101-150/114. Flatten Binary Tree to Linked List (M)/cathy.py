@@ -49,7 +49,6 @@ class Solution(object):
     def process(self, root):
         """
         :param root: 当前的结点
-        :param p: 新树的根节点
         :return:
         """
         if root is None:
