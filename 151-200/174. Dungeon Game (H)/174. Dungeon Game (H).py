@@ -24,7 +24,7 @@ class Solution(object):
                     if hp < 0:
                         dungeon[row][col] = - dungeon[row][col]
                     else:
-                        hp = 0
+                        dungeon[row][col] = 0
                 elif row == m - 1:
                     temp = dungeon[row][col+1] - dungeon[row][col]
                     if temp >= 0:
