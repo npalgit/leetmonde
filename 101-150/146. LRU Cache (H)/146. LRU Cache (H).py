@@ -35,7 +35,7 @@ class LRUCache(object):
                 self.container[key]['new'] = None
 
                 self.oldest = new_one
-                self.container[new_one]['old'] = None
+                self.container[self.oldest]['old'] = None
             else:
                 self.container[key]['old'] = self.newest
                 self.container[self.newest]['new'] = key
@@ -115,7 +115,7 @@ print cache.get(4), -1
 print cache.get(5), 5
 print '----'
 cache = LRUCache(1)
-print cache.put(2 ,1), None
+print cache.put(2, 1), None
 print cache.get(2), 1
 print cache.put(3, 2), None
 print cache.get(2), -1
@@ -133,7 +133,7 @@ print cache.get(3), 3
 print cache.get(4), 4
 print '----'
 cache = LRUCache(1)
-print cache.put(2 ,1), None
+print cache.put(2, 1), None
 print cache.get(2), 1
 print cache.put(3, 2), None
 print cache.get(2), -1

@@ -56,6 +56,13 @@ class Solution(object):
                     start = stack.pop()
 
 
+head = TreeNode(1)
+a = TreeNode(2)
+
+head.left = a
+
+test = Solution()
+m = test.flatten(head)
 
 
 

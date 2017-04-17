@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# cathy
+# cathy2
 # Created by yangchao 16/04/2017
 
 
+# Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
@@ -25,7 +26,6 @@ class Solution(object):
         print '------'
 
     def __init__(self):
-
         self.new_tree = None
 
     def flatten(self, root):
@@ -38,28 +38,36 @@ class Solution(object):
         else:
             # tree的先序遍历
             self.new_tree = TreeNode(root.val)
-            saved = self.new_tree  # 保存树的根
-            self.process(root.left)
-            self.process(root.right)
+            saved = self.new_tree
+            p = self.new_tree
+            self.process(root.left, p)
+            self.process(root.right, p)
 
-            root = saved
+            root.val = self.new_tree.val
+            root.left = None
+            root.right = saved.right
 
-            self.show(saved)  # 输出结果
-
-    def process(self, root):
+    def process(self, root, p):
         """
         :param root: 当前的结点
+        :param p: 新树的根节点
         :return:
         """
         if root is None:
             return
-        self.new_tree.right = TreeNode(root.val)
-        self.new_tree = self.new_tree.right
-        self.process(root.left)
-        self.process(root.right)
+        p.right = TreeNode(root.val)
+        p = p.right
+        self.process(root.left, p)
+        self.process(root.right, p)
+
+
+
+
+
 
 
 s = Solution()
+
 # 123456
 tree = TreeNode(1)
 tree.left = TreeNode(2)
@@ -72,7 +80,7 @@ tree.right.right = TreeNode(6)
 s.flatten(tree)
 
 
-# 124865459367
+
 tree = TreeNode(1)
 tree.left = TreeNode(2)
 tree.right = TreeNode(3)
@@ -100,8 +108,6 @@ s.flatten(tree)
 
 head = TreeNode(1)
 a = TreeNode(2)
-
 head.left = a
-
 test = Solution()
 m = test.flatten(head)
