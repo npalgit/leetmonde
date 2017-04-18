@@ -16,7 +16,7 @@ class Solution(object):
         """
         if n < 3:
             return 0
-        _set =[True for i in range(n)]
+        _set = range(n)
         x = 2
         ret = n - 2
         while x < n:
@@ -28,7 +28,7 @@ class Solution(object):
             num = x + x
             while num < n:
                 if _set[num]:
-                    _set[num] = False
+                    _set[num] = 0
                     ret -= 1
                 num += x
             x += 1

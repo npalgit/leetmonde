@@ -6,6 +6,10 @@
 
 
 class Solution(object):
+    def __init__(self):
+        self.state_set = []
+        self.n = 0
+
     def countPrimes(self, n):
         """
         :type n: int
@@ -13,24 +17,31 @@ class Solution(object):
         """
         if n <= 2:
             return 0
-        state_set = [True for i in range(0, n)]
+        self.state_set = [True for i in range(0, n)]
+        self.n = n
 
         count = 0
         i = 2
         while i < n:
             if i * i > n:
                 break
-            if state_set[i]:
-                num = i + i
-                while num < n:
-                    state_set[num] = False
-                    num += i
+            if self.state_set[i]:
+                self.eladuosai(i)
             i += 1
-        state_set[2] = True
+        self.state_set[2] = True
         for i in range(2, n):
-            if state_set[i]:
+            if self.state_set[i]:
                 count += 1
         return count
+
+    def eladuosai(self, num):
+        i = num + num
+        while i < self.n:
+            self.state_set[i] = False
+            i += num
+        pass
+test = Solution()
+print test.countPrimes(1500000)
 
 s = Solution()
 import time
