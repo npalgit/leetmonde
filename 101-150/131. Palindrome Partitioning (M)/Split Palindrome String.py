@@ -19,12 +19,10 @@ class Solution(object):
         for x in s:
             ret.add(x)
         _str = ['#']
-        p = [1]
+
         for x in s:
             _str.append(x)
             _str.append('#')
-            p.append(1)
-            p.append(1)
 
         for i in range(1, l * 2):
             left = i - 1
@@ -33,7 +31,6 @@ class Solution(object):
                 if _str[left] == _str[right]:
                     if _str[left] == '#':
                         ret.add(''.join(s[left / 2: right / 2]))
-                    p[i] += 1
                     left -= 1
                     right += 1
                 else:

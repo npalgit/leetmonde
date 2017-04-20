@@ -34,6 +34,8 @@ class Solution(object):
                 else:
                     break
         result = []
+        # print '---'
+        # print group
 
         def find_match(start, partition, child):
             for item in group[start]:
