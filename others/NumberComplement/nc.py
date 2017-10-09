@@ -3,6 +3,8 @@
 
 # nc
 # Created by yangchao 24/03/2017
+
+
 class Solution(object):
     def findComplement(self, num):
         """

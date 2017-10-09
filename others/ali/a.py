@@ -50,7 +50,6 @@ def process(y):
                 _y -= l
                 break
             elif _y <= true_pos:
-                print '?'
                 break
     return str(_pro(_y)[0])[_rich]
 
@@ -58,7 +57,7 @@ def process(y):
 def calc(index, round_num):
     return round_num*(round_num-1)/2 + index
 
-for _ in range(50, 100):
-    print process(_)
+for _ in range(1, 100):
+    print _, process(_)
 
 
